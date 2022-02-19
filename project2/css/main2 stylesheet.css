@@ -1,0 +1,380 @@
+/*general css part for the page start*/
+html,body{
+    height:100%; /*help with making the footer stick to the buttom*/
+}
+body{
+    background-color: Beige;
+    padding:0px;
+    margin: 0px;
+}
+/*general css part for the page ends*/
+/*css part for the navbar start*/
+.navbar {
+    background-color: beige;
+    width:100%;
+    background:linear-gradient(lightcoral,rgb(245,245,220));
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+}
+.navbar ul{
+    list-style: none;
+    color:black;
+    text-align: center;
+}
+
+.navbar ul li{
+    margin:0px;
+    padding:10px;
+    text-align: center;
+}
+
+.collapse navbar-collapse{
+    text-align: center;
+}
+
+.collapse navbar-collapse ul li a{
+    text-decoration: none;
+    
+}
+.active ,#navbarSupportedContent ul li:hover{
+    background: linear-gradient(to left, burlywood, white);
+    border-radius: 10px;
+    height:50px;
+}
+.icons{
+  background:none;
+   border: none; 
+   padding: 5px 14px; 
+   font-size: 20px; 
+   cursor: pointer; 
+   border-radius: 10px;
+}
+/*css part for notification icon start*/
+.notifications .fas{
+    line-height: 30px;
+    
+}
+
+.notifications .num{
+    position: absolute;
+    top:15px;
+    left:60.1%;
+    width:25px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: Beige;
+    line-height: 25px;
+    box-sizing: border-box;
+}
+
+.notifications ul{
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin: 0;
+    width:25%;
+    background: linear-gradient(rgb(245,245,220),lightcoral);
+    box-shadow: 0 5px 15px rgba(245,245,220,0);
+    padding: 19px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius:30px;
+    display: none;
+}
+
+.notifications:hover ul{
+    display: block;
+}
+
+.notifications ul li{
+    list-style: none;
+    border-bottom: 1px solid rgb(0,0,0);
+    padding:8px 2px;
+    display:flex;
+}
+
+.notifications ul li:last-child{
+    border-bottom: none;
+}
+
+.notifications ul li .icon{
+    width:30px;
+    height:30px;
+    background:  beige;
+    border-radius: 50%;
+    text-align: center;
+    line-height:24px;
+    margin-right: 10px;
+}
+
+.notifications ul li .icon .fas{
+    font-size:16px;
+    line-height: 24px;
+}
+
+.notifications ul li .text{
+    position: relative;
+    font-family: sans-serif;
+    top:3px;
+    cursor: pointer;
+}
+
+.notifications ul li:hover .text{
+    font-weight: bold;
+    color: brown;
+}
+/*css part for notification icon end*/
+/*comment start'*/
+.comments .fas{
+    line-height: 30px;
+    
+}
+
+.comments .num{
+    position: absolute;
+    top:15px;
+    left:64.3%;
+    width:25px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: Beige;
+    line-height: 25px;
+    box-sizing: border-box;
+}
+
+.comments ul{
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin: 0;
+    width:25%;
+    background: linear-gradient(rgb(245,245,220),lightcoral);
+    box-shadow: 0 5px 15px rgba(245,245,220,0);
+    padding: 19px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius:30px;
+    display: none;
+}
+
+.comments:hover ul{
+    display: block;
+}
+
+.comments ul li{
+    list-style: none;
+    border-bottom: 1px solid rgb(0,0,0);
+    padding:8px 2px;
+    display:flex;
+}
+
+.comments ul li:last-child{
+    border-bottom: none;
+}
+
+.comments ul li .icon{
+    width:30px;
+    height:30px;
+    background:  beige;
+    border-radius: 50%;
+    text-align: center;
+    line-height:24px;
+    margin-right: 10px;
+}
+
+.comments ul li .icon .fas{
+    font-size:16px;
+    line-height: 24px;
+}
+
+.comments ul li .text{
+    position: relative;
+    font-family: sans-serif;
+    top:3px;
+    cursor: pointer;
+}
+
+.comments ul li:hover .text{
+    font-weight: bold;
+    color: brown;
+}
+/*comments end*/
+/*css part for the dropdown menu start*/
+.dropdown-menu{
+    display:none;
+    padding:0;
+    min-width:160px;
+}
+
+.dropdown-menu a:hover{
+    background: linear-gradient(to left, burlywood, white);
+}
+
+#navbarSupportedContent ul li:hover .dropdown-menu{
+    display:block;
+    position:absolute;
+    background: linear-gradient(lightcoral,rgb(245,245,220));
+    text-align: left;
+}
+
+.dropdown-item a:hover{
+    min-width:160px;
+    text-align: left;
+}
+
+#navbarSupportedContent ul li:hover .dropdown-menu a{
+    width:160px;
+    border-bottom: 1px dotted burlywood;
+    border-radius: 0;
+    text-align: left;
+    padding: 14px 16px;
+}
+
+#navbarSupportedContent ul li:hover .dropdown-menu a:last-child{
+    border-bottom:none; 
+}
+
+.nav-item{
+    align-content: flex-start;
+}
+/*css part for the dropdown menu end*/
+/*css part for the navigation part end*/
+
+
+
+/*css part for the cards start*/
+.page-wrapper{
+     min-height:100%; /*help with making the footer stick to the buttom*/
+}
+section {
+  display: -webkit-flex;
+}
+.page-wrapper nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: none;
+  padding: 10px;
+  border-right: 2px dotted #741d51;
+  margin:0;
+}
+
+.page-wrapper nav img{
+    padding:5px;
+}
+.page-wrapper nav img:hover{
+  box-shadow: 2px 2px 10px #000000;
+}
+article {
+ -webkit-flex: 7;
+  background:none;
+  padding: 5px;
+}
+article ul{
+    box-shadow: 0 5px 15px rgba(245,245,220,0);
+    padding: 19px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius:30px;
+}
+article ul li{
+    list-style: none;
+    border-bottom: 1px dotted rgb(0,0,0);
+    padding:8px 2px;
+    display:flex;
+}
+article ul li:hover .text{
+    font-weight: bold;
+    color: brown;
+}
+article ul li .icon{
+    width:30px;
+    height:30px;
+    text-align: center;
+    line-height:24px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    font-size:16px;
+    line-height: 24px;
+}
+.cards{
+    width:20%;
+    background: linear-gradient(rgb(245,245,220),lightcoral);
+    border-radius: 5px;
+    margin: 30px;  
+    display: inline-block;
+}
+.cards:hover{
+    box-shadow: 2px 2px 10px #000000;
+}
+.image img{
+    width:100%;
+    border-radius: 5px;
+    height:200px;
+}
+.title{
+    text-align: center;
+    padding: 4px;
+}
+.des{
+    text-align: center;
+}
+
+/*css part for the cards end*/
+
+
+
+
+/*css part for the footer start*/
+footer{
+    position: relative;
+    bottom: 0px;
+    width:100%;
+    background:  linear-gradient(rgb(245,245,220),lightcoral);
+    border-radius:10px;
+}
+
+.footer-content{
+    display:flex;
+}
+
+.footer-content .box{
+    flex-basis:50%;
+    padding:10px 20px;
+}
+
+.box h2{
+    font-size:20px;
+    font-weight: 500;
+    text-transform:uppercase;
+}
+
+.box .content{
+    margin:20px 0 0 0;
+}
+
+.left .content p{
+    text-align: justify;
+}
+
+.left .content .social{
+   margin:20px 0 0 0; 
+}
+
+.left .content .social a{
+    padding:0 2px;
+}
+
+.left .content .social a i{
+    height:40px;
+    width:40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    transition:0.3s;
+    color: brown;
+}
+
+.left .content .social a i:hover{
+    background: linear-gradient(to left, burlywood, beige);
+    border-radius: 10px;
+}
+/*css part for the footer end*/

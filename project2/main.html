@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book viewer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="icon" href="imgs/logoicon.jpeg">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/main2 stylesheet.css">  
+        <script src="https://kit.fontawesome.com/1384552d09.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+              
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+          <a class="navbar-brand" > <img src="imgs/logo.jpg" width="190" height="60" alt=""> </a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+          </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+      <li class="nav-item active">
+        <a class="nav-link" href="main page2.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="book1.html">my books</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> browse </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                <a class="dropdown-item" href="#">Recommendations</a>
+                <a class="dropdown-item" href="#">New Releases</a>
+                <a class="dropdown-item" href="#">News & Interviews</a>
+            
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> community </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                <a class="dropdown-item" href="#">Groups</a>
+                <a class="dropdown-item" href="#">Discussions</a>
+                <a class="dropdown-item" href="best authors.html">Best Author</a>
+                <a class="dropdown-item" href="Favoritespeople.html">Favorite people</a>
+                <a class="dropdown-item" href="#">Events</a>
+            
+        </div>
+      </li>
+      
+      
+     
+      <li>
+           <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              
+           </form>
+      </li>
+      <li class="nav-item">
+          <div class="notifications">
+          <button class="icons"><i class="fas fa-bell"></i></button>
+          <span class="num">4</span>
+          <ul>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone like your comment</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone send you message</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone add you in group</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone want to discusses new book</span>
+              </li>
+          </ul>
+          </div>
+      </li>
+      <li class="nav-item">
+          <div class="comments">
+          <button class="icons"> <i class="fas fa-comments"></i></button>
+          <span class="num">2</span>
+          <ul>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone commented in your book</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone replied to your comment</span>
+              </li>
+          </ul>
+          </div>
+      </li>
+       <li class="nav-item">
+           <button class="icons"> <i class="fas fa-envelope"></i></button>
+      </li>
+       <li class="nav-item">
+           <button class="icons"> <i class="fas fa-users"></i></button>
+      </li>
+       <li class="nav-item">
+           <button class="icons"> <i class="fas fa-book-reader"></i></button>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link disabled" href="aboutus.html">About us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="signup or login.html">signup or login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
+        <!-- this is the start: for hight of the body -->
+        <div class="page-wrapper">
+            <!--this for slide start-->
+            <script>
+                var i=0; //this the start point
+                var images=[]; 
+                var time= 3000; //this is the time of the img in miliseconds
+                // images list
+                images[0]='firstpic.jpeg';
+                images[1]='secoundpic.jpg';
+                images[2]='thirdpic.jpg';
+                images[3]='forthpic.jpg';
+                
+                //function to chang the img every 4 sec
+                function changeImg(){
+                    document.slide.src=images[i];
+                    if(i<images.length-1){ //the lenght will be 4 because of the num img but for index it's 3 so we will -1
+                     i++;
+                    }
+                    else{
+                        i=0; 
+                    }
+                    setTimeout("changeImg()", time); //calling the function again
+                    }
+                window.onload=changeImg; 
+            </script>
+            <center> <img name='slide' width='1000' height="600" onchange="changeImg()"></center>
+            <br>
+            <br>
+            <!--this for slide end-->
+            <center><h1>"The right book in the right hands at the right Time can change the world !"</h1></center>
+            <br>
+            <!--this is the cards start-->
+            <hr>
+            <strong><center><h1 style="color: #643a25; ">News !</h1></center></strong>
+                <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/1.jpg">
+                </div>
+                <div class="title">
+                    <h4>Michio Kaku Says the Universe Is Simpler Than We Think</h4>
+                </div>
+                <div class="des">
+                    <p>The physicist’s latest book, “The God Equation,” explains the search for the theory of everything.</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/2.jpg">
+                </div>
+                <div class="title">
+                    <h4>Olivia Laing’s Reading Piles Are Far From Organized</h4>
+                </div>
+                <div class="des">
+                    <p>“There are something like 15,000 books in our house, including pretty much every poetry pamphlet published in the 20th century. It’s a problem.”</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/3.jpg">
+                </div>
+                <div class="title">
+                    <h4>When Teacups, Burning Lumps of Coal and Eggs Flew Through the Air</h4>
+                </div>
+                <div class="des">
+                    <p>In her delightfully spooky new book, “The Haunting of Alma Fielding,” Kate Summerscale investigates poltergeist activity in 1930s London.</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/4.jpg">
+                </div>
+                <div class="title">
+                    <h4>New & Noteworthy, From Elizabeth Warren to Life as a Black Millennial</h4>
+                </div>
+                <div class="des">
+                    <p>A selection of recent titles of interest; plus, a peek at what our colleagues around the newsroom are reading.</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/5.jpg">
+                </div>
+                <div class="title">
+                    <h4>Kicking Homer to the Curb: The American Scholar Who Upended the Classics</h4>
+                </div>
+                <div class="des">
+                    <p>Robert Kanigel’s new biography relates the curious life and death of Prof. Milman Parry.</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/6.jpg">
+                </div>
+                <div class="title">
+                    <h4>Devoted to the Deaf, Did Alexander Graham Bell Do More Harm Than Good?</h4>
+                </div>
+                <div class="des">
+                    <p>Katie Booth‘s new biography, “The Invention of Miracles,” argues that the inventor’s view of deafness as a deficit to be cured by oralism has had a long, destructive influence on deaf culture.</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/7.jpg">
+                </div>
+                <div class="title">
+                    <h4>Is There Really Such a Thing as Maternal Instinct?</h4>
+                </div>
+                <div class="des">
+                    <p>As a journalist and young mother, Abigail Tucker wanted scientific proof that the female of our species possesses a maternal instinct.
+                    Yet after she spoke with dozens of scientists around the world.</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="image">
+                    <img height="200px" src="imgs/8.jpg">
+                </div>
+                <div class="title">
+                    <h4>New & Noteworthy, From Elizabeth Warren to Life as a Black Millennial</h4>
+                </div>
+                <div class="des">
+                    <p>A selection of recent titles of interest; plus, a peek at what our colleagues around the newsroom are reading.</p>
+                </div>
+            </div>
+            <!--this is the cards end-->
+            <!--adding video start-->
+              <center> <h3>Why Every Author Needs a ShelfTons Account ?</h3></center>
+              <center><video style="border: 3px dotted #741d51" width="500" height=""1000 controls preload src="vid/v1.mp4"></video></center>
+              <br>
+              <hr>
+            <!--adding video end-->
+            <!--making aside nav bar start-->
+            <section>
+                
+             <nav>
+                 <table> 
+                     <center> <h5>Top Books in 2021!!</h5></center>
+                     <tr>
+                         <td> <img width="65px" height="80px" src="imgs/book 1.jpg"></td>
+                         <td> <img width="65px" height="80px" src="imgs/book 2.jpg"></td>
+                         <td> <img width="65px" height="80px" src="imgs/book 3.jpg"></td>
+                    </tr>
+                    <tr>
+                          <td> <img width="65px" height="80px" src="imgs/book 6.jpg"></td>
+                          <td> <img width="65px" height="80px" src="imgs/book 7.jpg"></td>
+                          <td> <img width="65px" height="80px" src="imgs/book 8.jpg"></td>
+                   </tr>
+                   <tr>
+                          <td> <img width="65px" height="80px" src="imgs/book 9.jpg"></td>
+                          <td> <img width="65px" height="80px" src="imgs/book 10.jpg"></td>
+                          <td> <img width="65px" height="80px" src="imgs/book 5.jpg"></td>
+                   </tr>
+                   <tr>
+                          <td> <img width="65px" height="80px" src="imgs/book 4.jpg"></td>
+                   </tr>
+                </table>
+            </nav>
+              <article>
+                  <center><h4>Quotes</h4></center>
+            <ul>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth1.jpg"></i></span>
+                  <span class="text">“Be yourself; everyone else is already taken.”― Oscar Wilde</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth2.jpg"></i></span>
+                  <span class="text">“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”― Albert Einstein</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth3.jpg"></i></span>
+                  <span class="text">“So many books, so little time.”― Frank Zappa</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth4.jpg"></i></span>
+                  <span class="text">“A room without books is like a body without a soul.”― Marcus Tullius Cicero</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth5.jpg"></i></span>
+                  <span class="text">“Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.”― Bernard M. Baruch</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth6.jpg"></i></span>
+                  <span class="text">“You've gotta dance like there's nobody watching,Love like you'll never be hurt,Sing like there's nobody listening,And live like it's heaven on earth.”― William W. Purkey</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth7.jpg"></i></span>
+                  <span class="text">“In three words I can sum up everything I've learned about life: it goes on.”Robert Frost</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth8.jpg"></i></span>
+                  <span class="text">“A friend is someone who knows all about you and still loves you.”― Elbert Hubbard</span>
+              </li>
+              <li>
+                  <span class="icon"><i><img src="imgs/arth1.jpg"></i></span>
+                  <span class="text">“Always forgive your enemies; nothing annoys them so much.”― Oscar Wilde</span>
+              </li>
+            </ul>
+             </article>
+             </section>
+            <!--making aside nav bar end-->
+        </div>
+       <!-- this is the end: for hight of the body -->
+        
+<!--footer start-->
+<footer>
+  <div class="footer-content">
+     <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+          <p>ShelfTons is the UAE’s leading book recommendation website.OUR MISSION IS to share book love and encourage reading for pleasure by offering the tools, advice and information needed to help our members and browsers find their next favorite book.</p>   
+          <div class="social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="center box">
+                    <h2>Address</h2>
+                    <div class="content">
+                        <div class="place">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="text">xxxxx,xxxxxx</i>
+                        </div>
+                        <div class="phone">
+                            <i class="fas fa-phone-alt"></i>
+                            <i class="text">+xxx xxxxxxxx</i>
+                        </div>
+                        <div class="email">
+                            <i class="fas fa-envelope"></i>
+                            <i class="text">abc@example.com</i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right box">
+                    <h2>Contact us</h2>
+                    <div class="contact">
+                        <form action="#">
+                            <div class="email">
+                                <div class="text">Email*</div>
+                                <input type="email" required>
+                                <div class="msg">
+                                    <div class="text">Message*</div>
+                                    <textarea rows="2" cols="25" required></textarea>
+                                </div>
+                            </div>
+                            <div class="btn">
+                                <button type="submit">send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+
+</footer>
+<!--footer end-->
+    </body>
+</html>

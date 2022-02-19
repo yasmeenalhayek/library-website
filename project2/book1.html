@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <link rel="icon" href="imgs/logoicon.jpeg">
+  <meta charset="windows-1256">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/1384552d09.js" crossorigin="anonymous"></script>
+   
+    <style>
+ /*css part for the navbar start*/
+ html,body{
+    height:100%; /*help with making the footer stick to the buttom*/
+}
+.navbar {
+    background-color: beige;
+    width:100%;
+    background:linear-gradient(lightcoral,rgb(245,245,220));
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+}
+.navbar ul{
+    list-style: none;
+    color:black;
+    text-align: center;
+}
+
+.navbar ul li{
+    margin:0px;
+    padding:10px;
+    text-align: center;
+}
+
+.collapse navbar-collapse{
+    text-align: center;
+}
+
+.collapse navbar-collapse ul li a{
+    text-decoration: none;
+    
+}
+.active ,#navbarSupportedContent ul li:hover{
+    background: linear-gradient(to left, burlywood, white);
+    border-radius: 10px;
+    height:50px;
+    margin-bottom:20px;
+}
+.icons1{
+   background:none;
+   border: none; 
+   padding: 5px 14px; 
+   font-size: 20px; 
+   cursor: pointer; 
+   border-radius: 10px;
+}
+/*css part for notification icon start*/
+.notifications .fas{
+    line-height: 30px;
+    
+}
+
+.notifications .num{
+    position: absolute;
+    top:13px;
+    left:60.1%;
+    width:25px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: Beige;
+    line-height: 25px;
+    box-sizing: border-box;
+}
+
+.notifications ul{
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin: 0;
+    width:25%;
+    background: linear-gradient(rgb(245,245,220),lightcoral);
+    box-shadow: 0 5px 15px rgba(245,245,220,0);
+    padding: 19px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius:30px;
+    display: none;
+}
+
+.notifications:hover ul{
+    display: block;
+}
+
+.notifications ul li{
+    list-style: none;
+    border-bottom: 1px solid rgb(0,0,0);
+    padding:8px 2px;
+    display:flex;
+}
+
+.notifications ul li:last-child{
+    border-bottom: none;
+}
+
+.notifications ul li .icon{
+    width:30px;
+    height:30px;
+    background:  beige;
+    border-radius: 50%;
+    text-align: center;
+    line-height:24px;
+    margin-right: 10px;
+}
+
+.notifications ul li .icon .fas{
+    font-size:16px;
+    line-height: 24px;
+}
+
+.notifications ul li .text{
+    position: relative;
+    font-family: sans-serif;
+    top:3px;
+    cursor: pointer;
+}
+
+.notifications ul li:hover .text{
+    font-weight: bold;
+    color: brown;
+}
+/*css part for notification icon end*/
+/*comment start'*/
+.comments .fas{
+    line-height: 30px;
+    
+}
+
+.comments .num{
+    position: absolute;
+    top:15px;
+    left:65%;
+    width:25px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: Beige;
+    line-height: 25px;
+    box-sizing: border-box;
+}
+
+.comments ul{
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin: 0;
+    width:25%;
+    background: linear-gradient(rgb(245,245,220),lightcoral);
+    box-shadow: 0 5px 15px rgba(245,245,220,0);
+    padding: 19px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius:30px;
+    display: none;
+}
+
+.comments:hover ul{
+    display: block;
+}
+
+.comments ul li{
+    list-style: none;
+    border-bottom: 1px solid rgb(0,0,0);
+    padding:8px 2px;
+    display:flex;
+}
+
+.comments ul li:last-child{
+    border-bottom: none;
+}
+
+.comments ul li .icon{
+    width:30px;
+    height:30px;
+    background:  beige;
+    border-radius: 50%;
+    text-align: center;
+    line-height:24px;
+    margin-right: 10px;
+}
+
+.comments ul li .icon .fas{
+    font-size:16px;
+    line-height: 24px;
+}
+
+.comments ul li .text{
+    position: relative;
+    font-family: sans-serif;
+    top:3px;
+    cursor: pointer;
+}
+
+.comments ul li:hover .text{
+    font-weight: bold;
+    color: brown;
+}
+/*comments end*/
+/*css part for the dropdown menu start*/
+.dropdown-menu{
+    display:none;
+    padding:0;
+    min-width:160px;
+}
+
+.dropdown-menu a:hover{
+    background: linear-gradient(to left, burlywood, white);
+}
+
+#navbarSupportedContent ul li:hover .dropdown-menu{
+    display:block;
+    position:absolute;
+    background: linear-gradient(lightcoral,rgb(245,245,220));
+    text-align: left;
+}
+
+.dropdown-item a:hover{
+    min-width:160px;
+    text-align: left;
+}
+
+#navbarSupportedContent ul li:hover .dropdown-menu a{
+    width:160px;
+    border-bottom: 1px dotted burlywood;
+    border-radius: 0;
+    text-align: left;
+    padding: 14px 16px;
+}
+
+#navbarSupportedContent ul li:hover .dropdown-menu a:last-child{
+    border-bottom:none; 
+}
+
+.nav-item{
+    align-content: flex-start;
+}
+/*css part for the dropdown menu end*/
+/*css part for the navigation part end*/
+.page-wrapper{
+     min-height:100%; /*help with making the footer stick to the buttom*/
+}
+.theBestOfMe{ 
+  margin-left: 100px;
+  margin-right: 970px;
+  margin-top: 60px; 
+  }
+        
+ .theboy{
+  height:500px ;          
+  border-left: 1px solid black;
+  padding-left: 50px;
+  border-left-color: grey;
+  margin-left: 350px;
+  margin-top: -311px;
+  }
+        
+.startWithWhy{
+  height:500px ;          
+  border-left: 1px solid black;
+  padding-left: 50px;
+  border-left-color: grey;
+  margin-left: 650px;
+  margin-top: -500px;
+  }
+.TheLastLetters{
+ height:500px ;          
+ border-left: 1px solid black;
+ padding-left: 50px;
+ border-left-color: grey;
+ margin-left: 950px;
+ margin-top: -505px;
+ }
+ /*css part for the footer start*/
+footer{
+    position: relative;
+    bottom: 0px;
+    width:100%;
+    background:  linear-gradient(rgb(245,245,220),lightcoral);
+    border-radius:10px;
+}
+
+.footer-content{
+    display:flex;
+}
+
+.footer-content .box{
+    flex-basis:50%;
+    padding:10px 20px;
+}
+
+.box h2{
+    font-size:20px;
+    font-weight: 500;
+    text-transform:uppercase;
+}
+
+.box .content{
+    margin:20px 0 0 0;
+}
+
+.left .content p{
+    text-align: justify;
+}
+
+.left .content .social{
+   margin:20px 0 0 0; 
+}
+
+.left .content .social a{
+    padding:0 2px;
+}
+
+.left .content .social a i{
+    height:40px;
+    width:40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    transition:0.3s;
+    color: brown;
+}
+
+.left .content .social a i:hover{
+    background: linear-gradient(to left, burlywood, beige);
+    border-radius: 10px;
+}
+/*css part for the footer end*/
+</style>
+    </head>
+ 
+        <!-- this is the start: for hight of the body -->
+    <body  style="background-color: beige;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+            <a style="padding-top:0" class="navbar-brand" > <img src="imgs/logo.jpg" width="190" height="60" alt=""> </a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+          </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+      <li class="nav-item ">
+          <a style="font-size: 16px" class="nav-link" href="main page2.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item active">
+        <a style="font-size: 16px" class="nav-link" href="book1.html">my books</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a style="font-size: 16px" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> browse </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                <a style="font-size: 16px" class="dropdown-item" href="#">Recommendations</a>
+                <a style="font-size: 16px" class="dropdown-item" href="#">New Releases</a>
+                <a style="font-size: 16px" class="dropdown-item" href="#">News & Interviews</a>
+            
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a style="font-size: 16px" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> community </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                <a style="font-size: 16px" class="dropdown-item" href="#">Groups</a>
+                <a style="font-size: 16px" class="dropdown-item" href="#">Discussions</a>
+                <a style="font-size: 16px" class="dropdown-item" href="best authors.html">Best Author</a>
+                <a style="font-size: 16px" class="dropdown-item" href="Favoritespeople.html">Favorite people</a>
+                <a style="font-size: 16px" class="dropdown-item" href="#">Events</a>
+            
+        </div>
+      </li>
+      
+      
+     
+      <li>
+           <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              
+           </form>
+      </li>
+      <li class="nav-item">
+          <div class="notifications">
+          <button style="padding-top:9px;" class="icons1"><i class="fas fa-bell"></i></button>
+          <span class="num">4</span>
+          <ul>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone like your comment</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone send you message</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone add you in group</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone want to discusses new book</span>
+              </li>
+          </ul>
+          </div>
+      </li>
+      <li class="nav-item">
+          <div class="comments">
+              <button style="padding-top:9px;" class="icons1"> <i class="fas fa-comments"></i></button>
+          <span class="num">2</span>
+          <ul>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone commented in your book</span>
+              </li>
+              <li>
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span class="text">Someone replied to your comment</span>
+              </li>
+          </ul>
+          </div>
+      </li>
+       <li class="nav-item">
+           <button style="padding-top:9px;" class="icons1"> <i class="fas fa-envelope"></i></button>
+      </li>
+       <li class="nav-item">
+           <button style="padding-top:9px;" class="icons1"> <i class="fas fa-users"></i></button>
+      </li>
+       <li class="nav-item">
+           <button style="padding-top:9px;" class="icons1"> <i class="fas fa-book-reader"></i></button>
+      </li>
+       <li class="nav-item">
+        <a style="font-size: 16px" class="nav-link disabled" href="aboutus.html">About us</a>
+      </li>
+      <li class="nav-item">
+        <a style="font-size: 16px" class="nav-link disabled" href="signup or login.html">signup or login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+        <div class="page-wrapper">
+        <div style="font-family: copperplate, Fantasy; text-align: center; font-size: 20px; padding-top: 90px; "> Books</div>
+        <h1 style="font-family: copperplate, Fantasy; text-align: center;  font-size: 30px;"> The Best Books To Read in 2021</h1>
+        <h2 style="font-family: Papyrus, Fantasy; text-align: center;  font-size: 15px; color: silver;"> Open your eyes to the world, and the book is your way.</h2>
+        <div style="text-align: center;  color: gainsboro">________________________________________________________________________________________________________________________________________________________________________________</div>
+     
+        
+        
+        <p class="theBestOfMe"> <img src="imgs/best.jpg" width="200" height="300"> </p>
+          <p class="theboy"> <img src="imgs/theBoy.jpg" width="200" height="300"> </p>
+          <p  class="startWithWhy"> <img src="imgs/start.jpg" width="200" height="300"> </p>
+          <p class="TheLastLetters"> <img src="imgs/last.jpg" width="200" height="300"> </p>
+             <div style=" font-size: 30px; margin-top: -540px; margin-left: 70px; color: grey;font-family: cursive; "> 1 </div>
+             <div style=" font-size: 30px; margin-top: -42px; margin-left: 370px; color: grey; font-family: cursive;  ">2</div>
+             <div style=" font-size: 30px; margin-top: -42px;  margin-left: 670px; color: grey; font-family: cursive; ">3</div>
+             <div style=" font-size: 30px; margin-top: -42px;  margin-left: 970px; color: grey; font-family: cursive;   ">4</div>
+             
+       
+       
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px; margin-top: 300px; "> the best of me is an American romantic </div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px;"> drama novel written by Nicholas Sparks</div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px;"> in 2011. </div>
+             <div style="  font-family: monospace; margin-left: 66px; margin-top: 25px  ">Price : 36.60 AED</div> 
+              <div style="font-size: 15px; margin-left: 66px; margin-top: 5px;"> 6.7</div> <div style="font-size: 10px;  margin-left:87px; margin-top: -15px; " >/10</div> 
+              <div style=" margin-top: -19px; margin-left: 125px">
+              <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star-half-o" aria-hidden="true" style=" color: #ffc700;"></i> </div> 
+             
+             <p style="margin-top: 20px; margin-left: 66px;">
+                 <a href="https://www.amazon.ae/Best-Me-Nicholas-Sparks/dp/1455556564/ref=sr_1_1?crid=3G8BCXY3Z0UPV&dchild=1&keywords=the+best+of+me&qid=1618230081&sprefix=the+best+of+%2Caps%2C253&sr=8-1" class="btn btn-primary" role="button" style="background-color: forestgreen">Buy Now</a>
+              <a href="bookreview1 update.html" class="btn btn-default" role="button"> Check Review </a>
+              </p>
+              
+              <div style="margin-left: 300px; margin-top:-490px ">
+              
+                <div style="font-size:15px; font-family: cursive; margin-left: 62px; margin-top: 300px; "> the boy at the back of class: highlighting </div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 62px;">  the importance of friendship and </div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 62px;"> kindness in a world that doesn't always </div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 62px;"> make sense by Onjali Q.Rauf in 2018. </div>
+             <div style="  font-family: monospace; margin-left: 62px; margin-top: 5px  ">Price : 27.15 AED</div> 
+              <div style="font-size: 15px; margin-left: 62px; margin-top: 5px;"> 4.5</div> <div style="font-size: 10px;  margin-left:87px; margin-top: -15px; " >/10</div> 
+              <div style=" margin-top: -19px; margin-left: 121px">
+              <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star-half-o" aria-hidden="true" style=" color: #ffc700;"></i> </div> 
+             
+             <p style="margin-top: 20px; margin-left: 62px;">
+                 <a href="https://www.amazon.ae/Boy-At-Back-Class/dp/1510105018/ref=sr_1_1?dchild=1&keywords=the+boy+at+the+back+of+class&qid=1618230039&sr=8-1" class="btn btn-primary" role="button" style="background-color: forestgreen">Buy Now</a>
+              <a href="bookreview2.html" class="btn btn-default" role="button"> Check Review </a>
+              </p>
+              
+    </div>
+                <div style="margin-left: 600px; margin-top:-490px ">
+              
+                <div style="font-size:15px; font-family: cursive; margin-left: 66px; margin-top: 300px; "> Start with "Why: How Great </div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px;"> Leaders Inspire Everyone to Take</div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px;">Action is a book by Simon Sinek in 2011. </div>
+             <div style="  font-family: monospace; margin-left: 66px; margin-top: 25px  ">Price : 65.45 AED</div> 
+              <div style="font-size: 15px; margin-left: 66px; margin-top: 5px;"> 4.1</div> <div style="font-size: 10px;  margin-left:87px; margin-top: -15px; " >/10</div> 
+              <div style=" margin-top: -19px; margin-left: 125px">
+              <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star-half-o" aria-hidden="true" style=" color: #ffc700;"></i> </div> 
+             
+             <p style="margin-top: 20px; margin-left: 66px;">
+                 <a href="https://www.amazon.ae/Start-Why-Leaders-Inspire-Everyone/dp/1591842808/ref=sr_1_1?crid=2K669IJZA2UBJ&dchild=1&keywords=start+with+why&qid=1618229959&sprefix=start+%2Caps%2C318&sr=8-1" class="btn btn-primary" role="button" style="background-color: forestgreen">Buy Now</a>
+              <a href="bookreview3.html" class="btn btn-default" role="button"> Check Review </a>
+              </p>
+              
+    </div>
+              
+               </div>
+                <div style="margin-left: 900px; margin-top:-490px ">
+              
+                <div style="font-size:15px; font-family: cursive; margin-left: 66px; margin-top: 300px; "> The Last Letter from Your Lover </div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px;">  love story set in the not-so-swinging ’60s</div>
+             <div style="font-size:15px; font-family: cursive; margin-left: 66px;"> by Jojo Moyes in 2011 </div>
+             <div style="  font-family: monospace; margin-left: 66px; margin-top: 25px  ">Price : 36.02 AED</div> 
+              <div style="font-size: 15px; margin-left: 66px; margin-top: 5px;"> 5.0</div> <div style="font-size: 10px;  margin-left:87px; margin-top: -15px; " >/10</div> 
+              <div style=" margin-top: -19px; margin-left: 125px">
+              <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star" aria-hidden="true" style=" color: #ffc700;"></i> 
+             <i class="fa fa-star-half-o" aria-hidden="true" style=" color: #ffc700;"></i> </div> 
+             
+             <p style="margin-top: 20px; margin-left: 66px;">
+            <a href="https://www.amazon.ae/Last-Letter-Your-Lover-starring/dp/0340961643/ref=sr_1_1?dchild=1&keywords=the+last+letter+from+your+love&qid=1618229875&sr=8-1" class="btn btn-primary" role="button" style="background-color: forestgreen">Buy Now</a>
+              <a href="bookreview4.html" class="btn btn-default" role="button"> Check Review </a>
+              </p>
+              
+    </div>
+             
+         <div style="text-align: center; color: gainsboro">________________________________________________________________________________________________________________________________________________________________________________</div>   
+         <div style="font-size: small; margin-bottom: 40px; margin-left: 1100px; font-family: cursive; font-weight: bold;   "><a href="main page2.html">>>>return back to the Home Page</a></div>   
+         <div style="font-family: cursive; font-weight: bold; font-size:15px ">
+         </div>
+         <!--footer start-->
+<footer>
+  <div class="footer-content">
+     <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+          <p>ShelfTons is the UAE’s leading book recommendation website.OUR MISSION IS to share book love and encourage reading for pleasure by offering the tools, advice and information needed to help our members and browsers find their next favorite book.</p>   
+          <div class="social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="center box">
+                    <h2>Address</h2>
+                    <div class="content">
+                        <div class="place">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="text">xxxxx,xxxxxx</i>
+                        </div>
+                        <div class="phone">
+                            <i class="fas fa-phone-alt"></i>
+                            <i class="text">+xxx xxxxxxxx</i>
+                        </div>
+                        <div class="email">
+                            <i class="fas fa-envelope"></i>
+                            <i class="text">abc@example.com</i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right box">
+                    <h2>Contact us</h2>
+                    <div class="contact">
+                        <form action="#">
+                            <div class="email">
+                                <div class="text">Email*</div>
+                                <input type="email" required>
+                                <div class="msg">
+                                    <div class="text">Message*</div>
+                                    <textarea rows="2" cols="25" required></textarea>
+                                </div>
+                            </div>
+                            <div class="btn">
+                                <button type="submit">send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+          </div>
+</footer>
+<!--footer end-->
+    </body>
+</html>
+
+
